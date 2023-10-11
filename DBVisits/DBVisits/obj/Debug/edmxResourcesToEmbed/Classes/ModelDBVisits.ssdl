@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище mdkModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Корабли">
+    <Key>
+      <PropertyRef Name="Код_корабля" />
+    </Key>
+    <Property Name="Код_корабля" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название_корабля" Type="nchar" MaxLength="30" />
+    <Property Name="Водоизмещение,т" Type="int" Nullable="false" />
+    <Property Name="Порт_приписки" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Капитан" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Порты">
+    <Key>
+      <PropertyRef Name="Код_порта" />
+    </Key>
+    <Property Name="Код_порта" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Название_порта" Type="nchar" MaxLength="50" />
+    <Property Name="Страна" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Посещения">
+    <Key>
+      <PropertyRef Name="Код_посещения" />
+    </Key>
+    <Property Name="Код_посещения" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Код_корабля" Type="int" Nullable="false" />
+    <Property Name="Код_порта" Type="int" Nullable="false" />
+    <Property Name="Дата_прибытия" Type="nchar" MaxLength="10" />
+    <Property Name="Дата_отплытия" Type="nchar" MaxLength="10" />
+    <Property Name="Номер_причала" Type="int" Nullable="false" />
+    <Property Name="Цель_посещения" Type="nchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Посещения_Корабли">
+    <End Role="Корабли" Type="Self.Корабли" Multiplicity="1" />
+    <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Корабли">
+        <PropertyRef Name="Код_корабля" />
+      </Principal>
+      <Dependent Role="Посещения">
+        <PropertyRef Name="Код_корабля" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Посещения_Порты">
+    <End Role="Порты" Type="Self.Порты" Multiplicity="1" />
+    <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Порты">
+        <PropertyRef Name="Код_порта" />
+      </Principal>
+      <Dependent Role="Посещения">
+        <PropertyRef Name="Код_порта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище mdkModelContainer">
+    <EntitySet Name="Корабли" EntityType="Self.Корабли" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Порты" EntityType="Self.Порты" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Посещения" EntityType="Self.Посещения" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Посещения_Корабли" Association="Self.FK_Посещения_Корабли">
+      <End Role="Корабли" EntitySet="Корабли" />
+      <End Role="Посещения" EntitySet="Посещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Посещения_Порты" Association="Self.FK_Посещения_Порты">
+      <End Role="Порты" EntitySet="Порты" />
+      <End Role="Посещения" EntitySet="Посещения" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

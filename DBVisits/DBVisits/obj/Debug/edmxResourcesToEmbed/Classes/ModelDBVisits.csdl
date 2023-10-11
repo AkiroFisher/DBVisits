@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mdkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Корабли">
+    <Key>
+      <PropertyRef Name="Код_корабля" />
+    </Key>
+    <Property Name="Код_корабля" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Название_корабля" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Водоизмещение_т" Type="Int32" Nullable="false" />
+    <Property Name="Порт_приписки" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Капитан" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Посещения" Relationship="Self.FK_Посещения_Корабли" FromRole="Корабли" ToRole="Посещения" />
+  </EntityType>
+  <EntityType Name="Порты">
+    <Key>
+      <PropertyRef Name="Код_порта" />
+    </Key>
+    <Property Name="Код_порта" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Название_порта" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Страна" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Посещения" Relationship="Self.FK_Посещения_Порты" FromRole="Порты" ToRole="Посещения" />
+  </EntityType>
+  <EntityType Name="Посещения">
+    <Key>
+      <PropertyRef Name="Код_посещения" />
+    </Key>
+    <Property Name="Код_посещения" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Код_корабля" Type="Int32" Nullable="false" />
+    <Property Name="Код_порта" Type="Int32" Nullable="false" />
+    <Property Name="Дата_прибытия" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Дата_отплытия" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Номер_причала" Type="Int32" Nullable="false" />
+    <Property Name="Цель_посещения" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Корабли" Relationship="Self.FK_Посещения_Корабли" FromRole="Посещения" ToRole="Корабли" />
+    <NavigationProperty Name="Порты" Relationship="Self.FK_Посещения_Порты" FromRole="Посещения" ToRole="Порты" />
+  </EntityType>
+  <Association Name="FK_Посещения_Корабли">
+    <End Role="Корабли" Type="Self.Корабли" Multiplicity="1" />
+    <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Корабли">
+        <PropertyRef Name="Код_корабля" />
+      </Principal>
+      <Dependent Role="Посещения">
+        <PropertyRef Name="Код_корабля" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Посещения_Порты">
+    <End Role="Порты" Type="Self.Порты" Multiplicity="1" />
+    <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Порты">
+        <PropertyRef Name="Код_порта" />
+      </Principal>
+      <Dependent Role="Посещения">
+        <PropertyRef Name="Код_порта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mdkEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Корабли" EntityType="Self.Корабли" />
+    <EntitySet Name="Порты" EntityType="Self.Порты" />
+    <EntitySet Name="Посещения" EntityType="Self.Посещения" />
+    <AssociationSet Name="FK_Посещения_Корабли" Association="Self.FK_Посещения_Корабли">
+      <End Role="Корабли" EntitySet="Корабли" />
+      <End Role="Посещения" EntitySet="Посещения" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Посещения_Порты" Association="Self.FK_Посещения_Порты">
+      <End Role="Порты" EntitySet="Порты" />
+      <End Role="Посещения" EntitySet="Посещения" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

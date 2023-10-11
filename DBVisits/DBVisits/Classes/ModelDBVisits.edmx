@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище mdkModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Корабли">
+          <Key>
+            <PropertyRef Name="Код_корабля" />
+          </Key>
+          <Property Name="Код_корабля" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Название_корабля" Type="nchar" MaxLength="30" />
+          <Property Name="Водоизмещение,т" Type="int" Nullable="false" />
+          <Property Name="Порт_приписки" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Капитан" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Порты">
+          <Key>
+            <PropertyRef Name="Код_порта" />
+          </Key>
+          <Property Name="Код_порта" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Название_порта" Type="nchar" MaxLength="50" />
+          <Property Name="Страна" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Посещения">
+          <Key>
+            <PropertyRef Name="Код_посещения" />
+          </Key>
+          <Property Name="Код_посещения" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Код_корабля" Type="int" Nullable="false" />
+          <Property Name="Код_порта" Type="int" Nullable="false" />
+          <Property Name="Дата_прибытия" Type="nchar" MaxLength="10" />
+          <Property Name="Дата_отплытия" Type="nchar" MaxLength="10" />
+          <Property Name="Номер_причала" Type="int" Nullable="false" />
+          <Property Name="Цель_посещения" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Посещения_Корабли">
+          <End Role="Корабли" Type="Self.Корабли" Multiplicity="1" />
+          <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Корабли">
+              <PropertyRef Name="Код_корабля" />
+            </Principal>
+            <Dependent Role="Посещения">
+              <PropertyRef Name="Код_корабля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Посещения_Порты">
+          <End Role="Порты" Type="Self.Порты" Multiplicity="1" />
+          <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Порты">
+              <PropertyRef Name="Код_порта" />
+            </Principal>
+            <Dependent Role="Посещения">
+              <PropertyRef Name="Код_порта" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище mdkModelContainer">
+          <EntitySet Name="Корабли" EntityType="Self.Корабли" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Порты" EntityType="Self.Порты" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Посещения" EntityType="Self.Посещения" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Посещения_Корабли" Association="Self.FK_Посещения_Корабли">
+            <End Role="Корабли" EntitySet="Корабли" />
+            <End Role="Посещения" EntitySet="Посещения" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Посещения_Порты" Association="Self.FK_Посещения_Порты">
+            <End Role="Порты" EntitySet="Порты" />
+            <End Role="Посещения" EntitySet="Посещения" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mdkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Корабли">
+          <Key>
+            <PropertyRef Name="Код_корабля" />
+          </Key>
+          <Property Name="Код_корабля" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Название_корабля" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+          <Property Name="Водоизмещение_т" Type="Int32" Nullable="false" />
+          <Property Name="Порт_приписки" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Капитан" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Посещения" Relationship="Self.FK_Посещения_Корабли" FromRole="Корабли" ToRole="Посещения" />
+        </EntityType>
+        <EntityType Name="Порты">
+          <Key>
+            <PropertyRef Name="Код_порта" />
+          </Key>
+          <Property Name="Код_порта" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Название_порта" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Страна" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Посещения" Relationship="Self.FK_Посещения_Порты" FromRole="Порты" ToRole="Посещения" />
+        </EntityType>
+        <EntityType Name="Посещения">
+          <Key>
+            <PropertyRef Name="Код_посещения" />
+          </Key>
+          <Property Name="Код_посещения" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Код_корабля" Type="Int32" Nullable="false" />
+          <Property Name="Код_порта" Type="Int32" Nullable="false" />
+          <Property Name="Дата_прибытия" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Дата_отплытия" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Номер_причала" Type="Int32" Nullable="false" />
+          <Property Name="Цель_посещения" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Корабли" Relationship="Self.FK_Посещения_Корабли" FromRole="Посещения" ToRole="Корабли" />
+          <NavigationProperty Name="Порты" Relationship="Self.FK_Посещения_Порты" FromRole="Посещения" ToRole="Порты" />
+        </EntityType>
+        <Association Name="FK_Посещения_Корабли">
+          <End Role="Корабли" Type="Self.Корабли" Multiplicity="1" />
+          <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Корабли">
+              <PropertyRef Name="Код_корабля" />
+            </Principal>
+            <Dependent Role="Посещения">
+              <PropertyRef Name="Код_корабля" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Посещения_Порты">
+          <End Role="Порты" Type="Self.Порты" Multiplicity="1" />
+          <End Role="Посещения" Type="Self.Посещения" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Порты">
+              <PropertyRef Name="Код_порта" />
+            </Principal>
+            <Dependent Role="Посещения">
+              <PropertyRef Name="Код_порта" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="mdkEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Корабли" EntityType="Self.Корабли" />
+          <EntitySet Name="Порты" EntityType="Self.Порты" />
+          <EntitySet Name="Посещения" EntityType="Self.Посещения" />
+          <AssociationSet Name="FK_Посещения_Корабли" Association="Self.FK_Посещения_Корабли">
+            <End Role="Корабли" EntitySet="Корабли" />
+            <End Role="Посещения" EntitySet="Посещения" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Посещения_Порты" Association="Self.FK_Посещения_Порты">
+            <End Role="Порты" EntitySet="Порты" />
+            <End Role="Посещения" EntitySet="Посещения" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище mdkModelContainer" CdmEntityContainer="mdkEntities">
+          <EntitySetMapping Name="Корабли">
+            <EntityTypeMapping TypeName="mdkModel.Корабли">
+              <MappingFragment StoreEntitySet="Корабли">
+                <ScalarProperty Name="Код_корабля" ColumnName="Код_корабля" />
+                <ScalarProperty Name="Название_корабля" ColumnName="Название_корабля" />
+                <ScalarProperty Name="Водоизмещение_т" ColumnName="Водоизмещение,т" />
+                <ScalarProperty Name="Порт_приписки" ColumnName="Порт_приписки" />
+                <ScalarProperty Name="Капитан" ColumnName="Капитан" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Порты">
+            <EntityTypeMapping TypeName="mdkModel.Порты">
+              <MappingFragment StoreEntitySet="Порты">
+                <ScalarProperty Name="Код_порта" ColumnName="Код_порта" />
+                <ScalarProperty Name="Название_порта" ColumnName="Название_порта" />
+                <ScalarProperty Name="Страна" ColumnName="Страна" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Посещения">
+            <EntityTypeMapping TypeName="mdkModel.Посещения">
+              <MappingFragment StoreEntitySet="Посещения">
+                <ScalarProperty Name="Код_посещения" ColumnName="Код_посещения" />
+                <ScalarProperty Name="Код_корабля" ColumnName="Код_корабля" />
+                <ScalarProperty Name="Код_порта" ColumnName="Код_порта" />
+                <ScalarProperty Name="Дата_прибытия" ColumnName="Дата_прибытия" />
+                <ScalarProperty Name="Дата_отплытия" ColumnName="Дата_отплытия" />
+                <ScalarProperty Name="Номер_причала" ColumnName="Номер_причала" />
+                <ScalarProperty Name="Цель_посещения" ColumnName="Цель_посещения" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

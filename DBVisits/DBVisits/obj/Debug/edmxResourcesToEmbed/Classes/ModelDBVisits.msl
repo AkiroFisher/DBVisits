@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище mdkModelContainer" CdmEntityContainer="mdkEntities">
+    <EntitySetMapping Name="Корабли">
+      <EntityTypeMapping TypeName="mdkModel.Корабли">
+        <MappingFragment StoreEntitySet="Корабли">
+          <ScalarProperty Name="Код_корабля" ColumnName="Код_корабля" />
+          <ScalarProperty Name="Название_корабля" ColumnName="Название_корабля" />
+          <ScalarProperty Name="Водоизмещение_т" ColumnName="Водоизмещение,т" />
+          <ScalarProperty Name="Порт_приписки" ColumnName="Порт_приписки" />
+          <ScalarProperty Name="Капитан" ColumnName="Капитан" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Порты">
+      <EntityTypeMapping TypeName="mdkModel.Порты">
+        <MappingFragment StoreEntitySet="Порты">
+          <ScalarProperty Name="Код_порта" ColumnName="Код_порта" />
+          <ScalarProperty Name="Название_порта" ColumnName="Название_порта" />
+          <ScalarProperty Name="Страна" ColumnName="Страна" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Посещения">
+      <EntityTypeMapping TypeName="mdkModel.Посещения">
+        <MappingFragment StoreEntitySet="Посещения">
+          <ScalarProperty Name="Код_посещения" ColumnName="Код_посещения" />
+          <ScalarProperty Name="Код_корабля" ColumnName="Код_корабля" />
+          <ScalarProperty Name="Код_порта" ColumnName="Код_порта" />
+          <ScalarProperty Name="Дата_прибытия" ColumnName="Дата_прибытия" />
+          <ScalarProperty Name="Дата_отплытия" ColumnName="Дата_отплытия" />
+          <ScalarProperty Name="Номер_причала" ColumnName="Номер_причала" />
+          <ScalarProperty Name="Цель_посещения" ColumnName="Цель_посещения" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
