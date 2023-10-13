@@ -105,6 +105,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageVisits.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +117,9 @@
   <ItemGroup>
     <Compile Include="Pages\PageAddEdit.xaml.cs">
       <DependentUpon>PageAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageListView.xaml.cs">
+      <DependentUpon>PageListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageVisits.xaml.cs">
       <DependentUpon>PageVisits.xaml</DependentUpon>
@@ -152,6 +159,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\blackperl.jpg" />
+    <Resource Include="Resources\noship.jpg" />
+    <Resource Include="Resources\ves.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Classes\ModelDBVisits.Context.tt">

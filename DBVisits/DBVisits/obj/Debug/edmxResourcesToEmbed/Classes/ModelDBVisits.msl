@@ -6,9 +6,10 @@
         <MappingFragment StoreEntitySet="Корабли">
           <ScalarProperty Name="Код_корабля" ColumnName="Код_корабля" />
           <ScalarProperty Name="Название_корабля" ColumnName="Название_корабля" />
-          <ScalarProperty Name="Водоизмещение_т" ColumnName="Водоизмещение,т" />
+          <ScalarProperty Name="Водоизмещение" ColumnName="Водоизмещение" />
           <ScalarProperty Name="Порт_приписки" ColumnName="Порт_приписки" />
           <ScalarProperty Name="Капитан" ColumnName="Капитан" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

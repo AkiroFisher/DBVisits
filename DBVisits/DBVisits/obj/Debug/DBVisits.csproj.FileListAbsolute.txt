@@ -78,3 +78,34 @@ C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\o
 C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\obj\Debug\DBVisits.csproj.CopyComplete
 C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\obj\Debug\DBVisits.exe
 C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\obj\Debug\DBVisits.pdb
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\DBVisits.exe.config
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\DBVisits.exe
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\DBVisits.pdb
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\EntityFramework.dll
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\EntityFramework.xml
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.csproj.AssemblyReference.cache
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\MainWindow.g.cs
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\Pages\PageAddEdit.g.cs
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\Pages\PageListView.g.cs
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\Pages\PageVisits.g.cs
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\App.g.cs
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits_Content.g.cs
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits_MarkupCompile.cache
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits_MarkupCompile.lref
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\App.baml
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\MainWindow.baml
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\Pages\PageAddEdit.baml
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\Pages\PageVisits.baml
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\Pages\PageListView.baml
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.g.resources
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.Properties.Resources.resources
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.csproj.GenerateResource.cache
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.csproj.CoreCompileInputs.cache
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.csproj.CopyComplete
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.exe
+C:\Users\Студент\Desktop\isp212a\родермель\DBVisits\DBVisits\obj\Debug\DBVisits.pdb
+C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\obj\Debug\Pages\PageListView.g.cs
+C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\obj\Debug\Pages\PageListView.baml

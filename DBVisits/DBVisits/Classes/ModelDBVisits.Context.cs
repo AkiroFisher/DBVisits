@@ -15,17 +15,19 @@ namespace DBVisits.Classes
     
     public partial class mdkEntities : DbContext
     {
-        private static mdkEntities _context;
         public mdkEntities()
-            : base("name=masterEntities")
+            : base("name=mdkEntities")
         {
         }
+
+        private static mdkEntities _context;
+
         public static mdkEntities GetContext()
         {
             if (_context == null)
-
+            {
                 _context = new mdkEntities();
-
+            }
             return _context;
         }
 

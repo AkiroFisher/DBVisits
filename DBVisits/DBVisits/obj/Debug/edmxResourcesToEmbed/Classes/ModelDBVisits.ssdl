@@ -6,9 +6,10 @@
     </Key>
     <Property Name="Код_корабля" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Название_корабля" Type="nchar" MaxLength="30" />
-    <Property Name="Водоизмещение,т" Type="int" Nullable="false" />
+    <Property Name="Водоизмещение" Type="int" Nullable="false" />
     <Property Name="Порт_приписки" Type="nchar" MaxLength="20" Nullable="false" />
     <Property Name="Капитан" Type="nchar" MaxLength="20" />
+    <Property Name="Photo" Type="nchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Порты">
     <Key>

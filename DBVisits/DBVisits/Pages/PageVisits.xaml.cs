@@ -61,6 +61,11 @@ namespace DBVisits.Pages
             Classes.ClassFrame.frmObj.Navigate(new Pages.PageAddEdit(null));
         }
 
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            Classes.ClassFrame.frmObj.Navigate(new Pages.PageAddEdit((sender as Button).DataContext as Посещения));
+        }
+
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
             var lstForDelete = dtgListVisits.SelectedItems.Cast<Посещения>().ToList();
@@ -81,9 +86,9 @@ namespace DBVisits.Pages
                 }
         }
 
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnListView_Click(object sender, RoutedEventArgs e)
         {
-            Classes.ClassFrame.frmObj.Navigate(new Pages.PageAddEdit((sender as Button).DataContext as Посещения));
+            Classes.ClassFrame.frmObj.Navigate(new Pages.PageListView());
         }
     }
 }

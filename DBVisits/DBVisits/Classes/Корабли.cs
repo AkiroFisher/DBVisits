@@ -22,9 +22,10 @@ namespace DBVisits.Classes
     
         public int Код_корабля { get; set; }
         public string Название_корабля { get; set; }
-        public int Водоизмещение_т { get; set; }
+        public int Водоизмещение { get; set; }
         public string Порт_приписки { get; set; }
         public string Капитан { get; set; }
+        public string Photo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Посещения> Посещения { get; set; }

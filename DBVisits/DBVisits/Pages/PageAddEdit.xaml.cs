@@ -41,6 +41,7 @@ namespace DBVisits.Pages
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             if (_currentVisit.Код_посещения == 0)
+
                 mdkEntities.GetContext().Посещения.Add(_currentVisit);
 
             mdkEntities.GetContext().SaveChanges();

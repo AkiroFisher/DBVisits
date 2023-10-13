@@ -45,6 +45,10 @@
                     Content="Удаление"
                     Style="{StaticResource BtnSt}"
                     Click="BtnDelete_Click"/>
+            <Button Name="BtnListView"
+                    Content="ListView"
+                    Style="{StaticResource BtnSt}"
+                    Click="BtnListView_Click"/>
         </StackPanel>
         <DataGrid Grid.Column="1"
           Name="dtgListVisits"

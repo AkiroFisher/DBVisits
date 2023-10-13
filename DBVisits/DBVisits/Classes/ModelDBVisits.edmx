@@ -11,9 +11,10 @@
           </Key>
           <Property Name="Код_корабля" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Название_корабля" Type="nchar" MaxLength="30" />
-          <Property Name="Водоизмещение,т" Type="int" Nullable="false" />
+          <Property Name="Водоизмещение" Type="int" Nullable="false" />
           <Property Name="Порт_приписки" Type="nchar" MaxLength="20" Nullable="false" />
           <Property Name="Капитан" Type="nchar" MaxLength="20" />
+          <Property Name="Photo" Type="nchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Порты">
           <Key>
@@ -83,9 +84,10 @@
           </Key>
           <Property Name="Код_корабля" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Название_корабля" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
-          <Property Name="Водоизмещение_т" Type="Int32" Nullable="false" />
+          <Property Name="Водоизмещение" Type="Int32" Nullable="false" />
           <Property Name="Порт_приписки" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Капитан" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Посещения" Relationship="Self.FK_Посещения_Корабли" FromRole="Корабли" ToRole="Посещения" />
         </EntityType>
         <EntityType Name="Порты">
@@ -159,9 +161,10 @@
               <MappingFragment StoreEntitySet="Корабли">
                 <ScalarProperty Name="Код_корабля" ColumnName="Код_корабля" />
                 <ScalarProperty Name="Название_корабля" ColumnName="Название_корабля" />
-                <ScalarProperty Name="Водоизмещение_т" ColumnName="Водоизмещение,т" />
+                <ScalarProperty Name="Водоизмещение" ColumnName="Водоизмещение" />
                 <ScalarProperty Name="Порт_приписки" ColumnName="Порт_приписки" />
                 <ScalarProperty Name="Капитан" ColumnName="Капитан" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

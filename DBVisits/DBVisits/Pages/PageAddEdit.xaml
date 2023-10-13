@@ -14,65 +14,62 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock Text="Название корабля"
-                           Margin="5" 
-                           Width="200"/>
+                           Style="{StaticResource TxbAE}"/>
                 <ComboBox Name="CmbNameShip" 
-                         Width="150"
-                         Margin="5"/>
+                          Style="{StaticResource CmbBSt}"
+                          SelectedValue="{Binding Код_корабля}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock Text="Название порта"
-                           Margin="5" 
-                           Width="200"/>
+                           Style="{StaticResource TxbAE}"/>
                 <ComboBox Name="CmbNamePort" 
-                         Width="150"
-                         Margin="5"/>
+                          Style="{StaticResource CmbBSt}"
+                          SelectedValue="{Binding Код_порта}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock Text="Дата прибытия"
-                           Margin="5" 
-                           Width="200"/>
+                           Style="{StaticResource TxbAE}"/>
                 <TextBox Name="TxtDateCome" 
                          Width="150"
-                         Margin="5"/>
+                         Margin="5"
+                         Text="{Binding Дата_прибытия}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock Text="Дата отплытия"
-                           Margin="5"
-                           Width="200"/>
+                           Style="{StaticResource TxbAE}"/>
                 <TextBox Name="TxtDateOut"
                           Width="150" 
                           Height="30"
-                          Margin="5"/>
+                          Margin="5"
+                         Text="{Binding Дата_отплытия}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock Text="Номер причала"
-                           Margin="5" 
-                           Width="200"/>
+                           Style="{StaticResource TxbAE}"/>
                 <TextBox Name="TxtPrichal"
                           Width="150"
                           Height="30"
-                          Margin="5"/>
+                          Margin="5"
+                          Text="{Binding Номер_причала}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center">
                 <TextBlock Text="Цель посещения"
-                           Margin="5" 
-                           Width="200"/>
+                           Style="{StaticResource TxbAE}"/>
                 <TextBox Name="TxtReason"
                           Width="150" 
                           Height="30"
-                          Margin="5"/>
+                          Margin="5"
+                         Text="{Binding Цель_посещения}"/>
             </StackPanel>
             <Button Content="Сохранить"
                     Name="BtnSave"
-                    Width="150" 
                     Click="BtnSave_Click"
-                    Margin="5"/>
+                    Style="{StaticResource BtnSt}"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1c70ebef3ef543e0a0bef17a02bf2ed1" Name="Diagram1">
-        <EntityTypeShape EntityType="mdkModel.Корабли" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+      <Diagram DiagramId="6214f997760a402d83348484c388d7dc" Name="Diagram1">
+        <EntityTypeShape EntityType="mdkModel.Корабли" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="mdkModel.Порты" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="mdkModel.Посещения" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="mdkModel.FK_Посещения_Корабли" ManuallyRouted="false" />
