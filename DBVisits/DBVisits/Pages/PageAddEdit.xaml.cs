@@ -52,7 +52,7 @@ namespace DBVisits.Pages
                 TxtDateCome.Clear();
                 TxtDateOut.Clear();
                 TxtPrichal.Clear();
-                TxtReason.Focus();
+                TxtReason.Clear();
             }
             else
                 Classes.ClassFrame.frmObj.Navigate(new Pages.PageVisits());

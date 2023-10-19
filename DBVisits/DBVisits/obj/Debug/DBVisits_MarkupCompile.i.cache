@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\obj\Debug\
+F:\мдк.01.01\DBVisits\DBVisits\obj\Debug\
 DBVisits
 none
 false
 DEBUG;TRACE
-C:\Users\roder\OneDrive\Рабочий стол\мдк.01.01\DBVisits\DBVisits\App.xaml
+F:\мдк.01.01\DBVisits\DBVisits\App.xaml
 4-1626162240
 21112910391
 16-10598253
-18-52701889
+211498954517
 MainWindow.xaml;Pages\PageAddEdit.xaml;Pages\PageListView.xaml;Pages\PageVisits.xaml;
 
-False
+True
 

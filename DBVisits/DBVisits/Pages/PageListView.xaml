@@ -9,33 +9,38 @@
       Title="PageListView">
 
     <Grid>
-        <ListView Name="LstViewShips">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center">
-                        <TextBlock Text="{Binding Название_корабля}"
-                                   Margin="5"/>
-                        <TextBlock Text="{Binding Водоизмещение}"
-                                   Margin="5"/>
-                        <TextBlock Text="{Binding Капитан}"
-                                   Margin="5"/>
-                        <Image  Width="50"
-                                Height="50"
-                            Stretch="Fill"
-                               HorizontalAlignment="Left"
-                               Margin="5">
-                            <Image.Source>
-                                <Binding Path="Photo">
-                                    <Binding.TargetNullValue>
-                                        <ImageSource>\Resources\noship.jpg</ImageSource>
-                                    </Binding.TargetNullValue>
-                                </Binding>
-                            </Image.Source>
-                        </Image>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <ListView Name="LstViewShips" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding Название_корабля}"
+                                           Margin="5"/>
+                                <TextBlock Text="{Binding Водоизмещение}"
+                                           Margin="5"/>
+                                <TextBlock Text="{Binding Капитан}"
+                                           Margin="5"/>
+                                <Image  Width="100"
+                                        Height="100"
+                                    Stretch="Fill"
+                                       HorizontalAlignment="Left"
+                                       Margin="5">
+                                    <Image.Source>
+                                        <Binding Path="Photo">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>\Resources\noship.jpg</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
         </ListView>
     </Grid>
 </Page>
